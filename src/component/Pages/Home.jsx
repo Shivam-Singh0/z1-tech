@@ -12,9 +12,7 @@ const Home = () => {
     const [showSearch, setShowSearch] = useState(false)
     const [searchJokes, {data, isLoading, isfetching}] = useSearchMoviesMutation()
 
-    if(!isLoading){
-      console.log(data)
-    }
+   
     
     const searchHandler = (e) => {
        
@@ -31,7 +29,7 @@ const Home = () => {
         return <div>Loading....</div>
     }
 
-   
+  
 
     if (!isLoading && data && showSearch) {
         return (
@@ -52,10 +50,10 @@ const Home = () => {
 
   return (
     <>
-    <div className='d-flex justify-content-center align-items-center vh-100 '>
+    <div className='d-flex justify-content-center align-items-center vh-100 ' style={{width: '100vw'}}>
         <InputGroup className="mb-3 shadow rounded"  style={{width: '50%'}}>
         <Form.Control
-          placeholder="Search for a joke...."
+          placeholder="Search for a Movie...."
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
           className='border-0'
