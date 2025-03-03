@@ -10,7 +10,12 @@ export const MoviesAPI = createApi({
             query: ({ query }) => `?s=${query}&plot=full&apikey=581b5485`,
             method: "GET",
         }),
+
+        movieDetail : builder.mutation({
+            query: ({ id }) => `?i=${id}&plot=full&apikey=581b5485`,
+            method: "GET",  
+        })
     }),
 });
 
-export const { useSearchMoviesMutation } = MoviesAPI;
+export const { useSearchMoviesMutation, useMovieDetailMutation } = MoviesAPI;

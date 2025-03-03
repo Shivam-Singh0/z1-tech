@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function MoviesCard({id, Title, Poster, Year}) {
   return (
@@ -10,7 +11,7 @@ function MoviesCard({id, Title, Poster, Year}) {
         <Card.Text>
          {Year}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Link className='btn btn-primary' to={id}>Go</Link>
       </Card.Body>
     </Card>
   );
