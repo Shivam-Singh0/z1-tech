@@ -10,7 +10,7 @@ import { useSearchMoviesMutation, } from "../../redux/Apis/MoviesApi";
 const Home = () => {
     const [query, setQuery] = useState('')
     const [showSearch, setShowSearch] = useState(false)
-    const [searchJokes, {data, isLoading, isfetching}] = useSearchMoviesMutation()
+    const [searchMovie, {data, isLoading, isfetching}] = useSearchMoviesMutation()
 
    
     
@@ -18,7 +18,7 @@ const Home = () => {
        
         e.preventDefault();
         setShowSearch(true)
-        searchJokes({query}).unwrap();
+        searchMovie({query}).unwrap();
         
       
     
@@ -40,7 +40,6 @@ const Home = () => {
             <MoviesCard id={data.imdbID} Title={data.Title} Poster={data.Poster} Year={data.Year} />
             </div>
             <div className="d-flex justify-content-center gap-3 mt-3">
-            <Button  disabled={data.current_page === 1} onClick={() => searchJokes({query: data.search_term, page: data.previous_page})}>Previous</Button><Button disabled={data.current_page === data.total_pages } onClick={() => searchJokes({query: data.search_term, page: data.next_page})}>Next</Button>
             </div>
            </div>
         )   
