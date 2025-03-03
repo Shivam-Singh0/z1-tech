@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-const baseQuery = fetchBaseQuery({ baseUrl: "http://www.omdbapi.com/" });
+const baseQuery = fetchBaseQuery({ baseUrl: "https://www.omdbapi.com/" });
 
 export const MoviesAPI = createApi({
     baseQuery,
