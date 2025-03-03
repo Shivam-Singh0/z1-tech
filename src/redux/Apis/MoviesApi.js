@@ -7,7 +7,7 @@ export const MoviesAPI = createApi({
     reducerPath: "MoviesAPI",
     endpoints: (builder) => ({
         searchMovies: builder.mutation({
-            query: ({ query }) => `?t=${query}&plot=full&apikey=581b5485`,
+            query: ({ query }) => `?s=${query}&plot=full&apikey=581b5485`,
             method: "GET",
         }),
     }),

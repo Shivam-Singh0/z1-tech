@@ -22,7 +22,7 @@ const Home = () => {
         
       
     
-        console.log(query)
+       
     }
 
     if (isLoading || isfetching) {
@@ -31,13 +31,15 @@ const Home = () => {
 
   
 
-    if (!isLoading && data && showSearch) {
+    if (!isLoading && data?.Search.length && showSearch) {
         return (
            <div className="container mb-5">
             <Button className="mb-2" variant="light" onClick={() => setShowSearch(false)}><IoChevronBack size={25} /></Button>
              <div className="d-flex flex-wrap gap-3">
               
-            <MoviesCard id={data.imdbID} Title={data.Title} Poster={data.Poster} Year={data.Year} />
+           {data?.Search.map((movie) => (
+             <MoviesCard id={movie.imdbID} Title={movie.Title} Poster={movie.Poster} Year={movie.Year} />
+           ))}
             </div>
             <div className="d-flex justify-content-center gap-3 mt-3">
             </div>
